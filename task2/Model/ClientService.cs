@@ -17,6 +17,8 @@ namespace task2.Model
         public DateTime StartTime { get; set; }
         public string? Comment { get; set; }
 
+        public string time => StartTime.Day + "-" + StartTime.Month + "-" + StartTime.Year + " " + StartTime.TimeOfDay;
+
         public virtual Client Client { get; set; } = null!;
         public virtual Service Service { get; set; } = null!;
         public virtual ICollection<DocumentByService> DocumentByServices { get; set; }

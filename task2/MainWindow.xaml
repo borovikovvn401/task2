@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:task2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="980">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -45,10 +45,11 @@
         
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Visibility="Visible"  Margin="20,0" Name="addButton" Content="Добавить" Width="145" Height="30" Click="addButton_Click"></Button>
-            <Button Visibility="Visible" Name="editButton" Content="Редактировать" Width="145" Height="30" Click="editButton_Click"></Button>
-            <Button Visibility="Visible" Margin="20,0,0,0" Name="deleteButton" Content="Удалить" Width="145" Height="30" Click="deleteButton_Click"></Button>
-            <Button Visibility="Visible" Margin="20,0,0,0" Name="recordButton" Content="Записать" Width="145" Height="30" Click="recordButton_Click"></Button>
+            <Button Visibility="Hidden"  Margin="20,0" Name="addButton" Content="Добавить" Width="145" Height="30" Click="addButton_Click"></Button>
+            <Button Visibility="Hidden" Name="editButton" Content="Редактировать" Width="145" Height="30" Click="editButton_Click"></Button>
+            <Button Visibility="Hidden" Margin="20,0,0,0" Name="deleteButton" Content="Удалить" Width="145" Height="30" Click="deleteButton_Click"></Button>
+            <Button Visibility="Hidden" Margin="20,0,0,0" Name="recordButton" Content="Записать" Width="145" Height="30" Click="recordButton_Click"></Button>
+            <Button Visibility="Visible" Margin="20,0,0,0" Name="recordListButton" Content="Список записей" Width="145" Height="30" Click="recordListButton_Click"></Button>
         </StackPanel>
         <Grid Grid.Row="2" HorizontalAlignment="Right">
             <TextBlock Height="40" TextAlignment="Center" VerticalAlignment="Center" Text="" Name="tbRecords" Margin="-5,0,5,0"></TextBlock>

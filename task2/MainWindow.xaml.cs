@@ -68,6 +68,8 @@ namespace task2
                 deleteButton.Visibility = Visibility.Visible;
                 editButton.Visibility = Visibility.Visible;
                 addButton   .Visibility = Visibility.Visible;
+                recordButton.Visibility = Visibility.Visible;
+                recordListButton.Visibility = Visibility.Hidden;
                 adminButton.Content = "Режим администратора ВКЛ";
             } else
             {
@@ -75,6 +77,8 @@ namespace task2
                 deleteButton.Visibility = Visibility.Hidden;
                 editButton.Visibility = Visibility.Hidden;
                 addButton.Visibility = Visibility.Hidden;
+                recordButton.Visibility = Visibility.Hidden;
+                recordListButton.Visibility = Visibility.Hidden;
                 adminButton.Content = "Режим администратора ВЫКЛ";
             }
         }
@@ -185,6 +189,12 @@ namespace task2
                 addRecord.Show();   
                 this.IsEnabled = false;
             }
+        }
+
+        private void recordListButton_Click(object sender, RoutedEventArgs e)
+        {
+            RecordListForm recordListForm = new RecordListForm();
+            recordListForm.Show();
         }
     }
 }

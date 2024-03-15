@@ -35,11 +35,15 @@ namespace task2.Forms
             serviceName.Text = service.Title;
             serviceDuration.Text = (service.DurationInSeconds / 60) + " минут.";
             this.Title = "Запись клиента";
+
+            cbClients.ItemsSource = EfModel.Init().Clients.ToList();
+            clientService.Service = s;
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            EfModel.Init().Entry(clientService).Reload();
+            EfModel.Init().ClientServices.Add(clientService);
+            EfModel.save();
             this.Close();
             mainWindow.IsEnabled = true;
         }

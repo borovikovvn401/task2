@@ -11,7 +11,7 @@
         <TextBlock Name="serviceName">название услуги</TextBlock>
             <TextBlock x:Name="serviceDuration"> длительность</TextBlock>
             <TextBlock> выбор клиента</TextBlock>
-            <ComboBox></ComboBox>
+            <ComboBox Name="cbClients" SelectedItem="{Binding Client}" DisplayMemberPath="FIO"></ComboBox>
             <TextBlock>выберите дату</TextBlock>
             <DatePicker></DatePicker>
             <TextBlock >выберите время</TextBlock>

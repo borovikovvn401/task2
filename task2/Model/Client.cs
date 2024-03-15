@@ -22,6 +22,8 @@ namespace task2.Model
         public string GenderCode { get; set; } = null!;
         public string? PhotoPath { get; set; }
 
+        public string FIO => FirstName + " " + LastName + " " + Patronymic;
+
         public virtual Gender GenderCodeNavigation { get; set; } = null!;
         public virtual ICollection<ClientService> ClientServices { get; set; }
 
