@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:task2.Forms"
         mc:Ignorable="d"
-        Title="RecordListForm" Height="450" Width="1000">
+        Title="RecordListForm" Height="450" Width="1000"
+        Icon="{StaticResource school_ico}">
     <Grid>
         <DataGrid Name="dg" AutoGenerateColumns="False">
             <DataGrid.Columns>

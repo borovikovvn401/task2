@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:task2.Forms"
         mc:Ignorable="d"
-        Title="addRecordForm" Height="450" Width="400">
+        Title="addRecordForm" Height="450" Width="400"
+        Icon="{StaticResource school_ico}">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Width="300">
         <TextBlock Name="serviceName">название услуги</TextBlock>

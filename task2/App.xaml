@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:task2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <BitmapImage x:Key="school_logo" UriSource="/Resources/school_logo.png"/>
+        <BitmapImage x:Key="school_ico" UriSource="/Resources/icon (2).ico"/>
     </Application.Resources>
 </Application>

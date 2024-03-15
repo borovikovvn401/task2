@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:task2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="980">
+        Title="MainWindow" Height="450" Width="980"
+        Icon="{StaticResource school_ico}"
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -30,11 +32,15 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding MainImagePath}"></Image>
-                        <StackPanel>
-                            <TextBlock Margin="0,5" Text="{Binding Title}"></TextBlock>
-                            <TextBlock Margin="0,5" Text="{Binding getCost}"></TextBlock>
-                            <TextBlock Margin="0,5" Text="{Binding getDiscount}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="70" Height="70" Source="{Binding MainImagePath, FallbackValue={StaticResource school_logo}}"></Image>
+                            <Grid>
+                                <StackPanel>
+                                    <TextBlock Margin="0,5" Text="{Binding Title}"></TextBlock>
+                                    <TextBlock Margin="0,5" Text="{Binding getCost}"></TextBlock>
+                                    <TextBlock Margin="0,5" Text="{Binding getDiscount}"></TextBlock>
+                                </StackPanel>
+                            </Grid>
                         </StackPanel>
                         
                         
@@ -49,7 +55,7 @@
             <Button Visibility="Hidden" Name="editButton" Content="Редактировать" Width="145" Height="30" Click="editButton_Click"></Button>
             <Button Visibility="Hidden" Margin="20,0,0,0" Name="deleteButton" Content="Удалить" Width="145" Height="30" Click="deleteButton_Click"></Button>
             <Button Visibility="Hidden" Margin="20,0,0,0" Name="recordButton" Content="Записать" Width="145" Height="30" Click="recordButton_Click"></Button>
-            <Button Visibility="Visible" Margin="20,0,0,0" Name="recordListButton" Content="Список записей" Width="145" Height="30" Click="recordListButton_Click"></Button>
+            <Button Visibility="Hidden" Margin="20,0,0,0" Name="recordListButton" Content="Список записей" Width="145" Height="30" Click="recordListButton_Click"></Button>
         </StackPanel>
         <Grid Grid.Row="2" HorizontalAlignment="Right">
             <TextBlock Height="40" TextAlignment="Center" VerticalAlignment="Center" Text="" Name="tbRecords" Margin="-5,0,5,0"></TextBlock>

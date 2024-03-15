@@ -196,5 +196,6 @@ namespace task2
             RecordListForm recordListForm = new RecordListForm();
             recordListForm.Show();
         }
+
     }
 }

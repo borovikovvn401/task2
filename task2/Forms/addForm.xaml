@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:task2.Forms"
         mc:Ignorable="d"
-        Title="addForm" Height="450" Width="800">
+        Title="addForm" Height="450" Width="800"
+        Icon="{StaticResource school_ico}">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Width="400" Margin="0,20,0,0">
             <TextBlock Text="Наименование услуги"></TextBlock>
@@ -18,7 +19,6 @@
             <TextBox Text="{Binding Discount}"></TextBox>
             <TextBlock Text="Продолжительность (в секундах)"></TextBlock>
             <TextBox Text="{Binding DurationInSeconds}"></TextBox>
-            <TextBox Text="{Binding Id}"></TextBox>
             <Button Name="saveButton" Width="190" Content="Сохранить" Margin="0,20,0,0" Click="saveButton_Click"></Button>
         </StackPanel>
     </Grid>
