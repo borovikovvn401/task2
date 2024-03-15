@@ -8,14 +8,17 @@
         Title="addForm" Height="450" Width="800">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Width="400" Margin="0,20,0,0">
-            <TextBox Text="Наименование услуги"></TextBox>
+            <TextBlock Text="Наименование услуги"></TextBlock>
             <TextBox Text="{Binding Title}"></TextBox>
-            <TextBox Text="Стоимость"></TextBox>
+            <TextBlock Text="Стоимость"></TextBlock>
             <TextBox Text="{Binding Cost}"></TextBox>
-            <TextBox Text="Скидка"></TextBox>
+            <TextBlock Text="Описание"></TextBlock>
+            <TextBox Text="{Binding Description}"></TextBox>
+            <TextBlock Text="Скидка"></TextBlock>
             <TextBox Text="{Binding Discount}"></TextBox>
-            <TextBox Text="Продолжительность (в секундах)"></TextBox>
+            <TextBlock Text="Продолжительность (в секундах)"></TextBlock>
             <TextBox Text="{Binding DurationInSeconds}"></TextBox>
+            <TextBox Text="{Binding Id}"></TextBox>
             <Button Name="saveButton" Width="190" Content="Сохранить" Margin="0,20,0,0" Click="saveButton_Click"></Button>
         </StackPanel>
     </Grid>

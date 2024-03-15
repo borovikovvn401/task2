@@ -53,7 +53,7 @@ namespace task2.Forms
 
             mainWindow.update();
             mainWindow.IsEnabled = true;
-            EfModel.save();
+            this.Close();
 
         }
     }

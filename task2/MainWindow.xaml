@@ -13,11 +13,11 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBox Name="tbSearch" Width="185" Height="40" Margin="20,0" TextChanged="tbSearch_TextChanged"></TextBox>
-            <ComboBox Name="cbSort" Width="185" Height="40" SelectionChanged="cbSort_SelectionChanged"></ComboBox>
-            <ComboBox Name="cbFiltr" Width="185" Height="40" Margin="20,0" SelectionChanged="cbFiltr_SelectionChanged"></ComboBox>
+            <TextBox Name="tbSearch" Width="175" Height="40" Margin="10,0" TextChanged="tbSearch_TextChanged"></TextBox>
+            <ComboBox Name="cbSort" Width="175" Height="40" SelectionChanged="cbSort_SelectionChanged"></ComboBox>
+            <ComboBox Name="cbFiltr" Width="175" Height="40" Margin="10,0" SelectionChanged="cbFiltr_SelectionChanged"></ComboBox>
 
-            <Button x:Name="adminButton" Content="Режим администратора" Margin="10,0" Width="145" Height="20" Click="adminButton_Click"></Button>
+            <Button x:Name="adminButton" Content="Режим администратора ВЫКЛ" Margin="10,0" Width="185" Height="20" Click="adminButton_Click"></Button>
         </StackPanel>
 
 
@@ -45,14 +45,13 @@
         
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Margin="20,0" Name="addButton" Content="Добавить" Width="185" Height="40"></Button>
-            <Button Name="editButton" Content="Редактировать" Width="185" Height="40"></Button>
-            <Button Margin="20,0" Name="deleteButton" Content="Редактировать" Width="185" Height="40"></Button>
+            <Button Visibility="Visible"  Margin="20,0" Name="addButton" Content="Добавить" Width="145" Height="30" Click="addButton_Click"></Button>
+            <Button Visibility="Visible" Name="editButton" Content="Редактировать" Width="145" Height="30" Click="editButton_Click"></Button>
+            <Button Visibility="Visible" Margin="20,0,0,0" Name="deleteButton" Content="Удалить" Width="145" Height="30" Click="deleteButton_Click"></Button>
+            <Button Visibility="Visible" Margin="20,0,0,0" Name="recordButton" Content="Записать" Width="145" Height="30" Click="recordButton_Click"></Button>
         </StackPanel>
         <Grid Grid.Row="2" HorizontalAlignment="Right">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Записей: 0/0"></TextBlock>
-            </StackPanel>
+            <TextBlock Height="40" TextAlignment="Center" VerticalAlignment="Center" Text="" Name="tbRecords" Margin="-5,0,5,0"></TextBlock>
         </Grid>
     </Grid>
 </Window>

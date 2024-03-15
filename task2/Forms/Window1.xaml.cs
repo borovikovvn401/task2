@@ -35,6 +35,15 @@ namespace task2.Forms
 
             if (tbCode.Text == "0000")
             {
+                mainwindow.adminButton.Content = "Режим администратора ВыКЛ";
+                mainwindow.setAdmin(true);
+                mainwindow.IsEnabled = true;
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Неверный код доступа");
             }
         }
     }

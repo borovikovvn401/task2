@@ -24,7 +24,7 @@ namespace task2
     public partial class MainWindow : Window
     {
 
-        bool isAdmin = false;
+        public bool isAdmin = false;
 
         public MainWindow()
         {
@@ -51,11 +51,31 @@ namespace task2
         {
             if(isAdmin)
             {
-                adminButton.Content = "Режим администратора";
-                isAdmin = !isAdmin;
+                setAdmin(false);
             } else
             {
                 Window1 s = new Window1(this);
+                s.Show();
+                IsEnabled = false;
+            }
+        }
+
+        public void setAdmin(bool i)
+        {
+            if(i)
+            {
+                isAdmin = true;
+                deleteButton.Visibility = Visibility.Visible;
+                editButton.Visibility = Visibility.Visible;
+                addButton   .Visibility = Visibility.Visible;
+                adminButton.Content = "Режим администратора ВКЛ";
+            } else
+            {
+                isAdmin = false;
+                deleteButton.Visibility = Visibility.Hidden;
+                editButton.Visibility = Visibility.Hidden;
+                addButton.Visibility = Visibility.Hidden;
+                adminButton.Content = "Режим администратора ВЫКЛ";
             }
         }
 
@@ -79,17 +99,31 @@ namespace task2
                     services = services.OrderByDescending(p => p.Cost);
                     break;
             }
-
+            
             switch(cbFiltr.SelectedIndex)
             {
-                case 0:
+                case 1:
                     services = services.Where(p => p.Discount >= 0 && p.Discount < 5);
                     break;
-
+                case 2:
+                    services = services.Where(p => p.Discount >= 5 && p.Discount < 15);
+                    break;
+                case 3:
+                    services = services.Where(p => p.Discount >= 15 && p.Discount < 30);
+                    break;
+                case 4:
+                    services = services.Where(p => p.Discount >= 30 && p.Discount < 70);
+                    break;
+                case 5:
+                    services = services.Where(p => p.Discount >= 70 && p.Discount < 100);
+                    break;
             }
-
+            
 
             lvServices.ItemsSource = services.ToList();
+
+
+            tbRecords.Text = services.ToList().Count + "/" + EfModel.Init().Services.ToList().Count + " записей";
 
         }
 
@@ -106,6 +140,51 @@ namespace task2
         private void cbFiltr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             update();
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            addForm add = new addForm(new Service(), this);
+            add.Show();
+            this.IsEnabled = false;
+        }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(lvServices.SelectedItems.Count == 1)
+            {
+                Service service = lvServices.SelectedItem as Service;
+                addForm add = new addForm(service, this);
+                add.Show();
+                IsEnabled = false;
+                update();
+            }
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(lvServices.SelectedItems.Count == 1)
+            {
+                Service service = lvServices.SelectedItem as Service;
+                MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+                if(result == MessageBoxResult.Yes)
+                {
+                    EfModel.Init().Services.Remove(service);
+                    EfModel.save();
+                    update();
+                } 
+            }
+        }
+
+        private void recordButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(lvServices.SelectedItems.Count == 1)
+            {
+                Service service = lvServices.SelectedItem as Service;
+                addRecordForm addRecord = new addRecordForm(service, this);
+                addRecord.Show();   
+                this.IsEnabled = false;
+            }
         }
     }
 }
